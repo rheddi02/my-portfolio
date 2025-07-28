@@ -24,7 +24,7 @@ export class ProjectService {
       category: ProjectCategory.WEB_APP,
     },
     {
-      name: 'Task Management System',
+      name: 'URL Collections Management System',
       stacks: 'NextJS, Shadcn UI, PostgreSQL, Tailwind CSS',
       description:
         'Collection of links to various social media platforms that is categorized for easy access with admin control panel',
