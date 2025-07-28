@@ -10,26 +10,35 @@ export class ProjectService {
       stacks: 'Angular, Tailwind CSS, TypeScript',
       description:
         'A modern, responsive portfolio website built with Angular 18 and Tailwind CSS',
-      codeUrl: 'https://github.com/alfredo/portfolio',
-      liveUrl: 'https://alfredo-portfolio.dev',
+      codeUrl: '',
+      liveUrl: 'https://itsmealfred.site',
       category: ProjectCategory.WEB_APP,
     },
     {
-      name: 'E-Commerce Platform',
-      stacks: 'React, Node.js, PostgreSQL',
+      name: 'Admin Panel Platform',
+      stacks: 'React, NextJS, PostgreSQL, Tailwind CSS, Shadcn UI, NestJS',
       description:
-        'Full-stack e-commerce solution with payment integration and admin dashboard',
-      codeUrl: 'https://github.com/alfredo/ecommerce',
-      liveUrl: 'https://alfredo-shop.com',
+        'Full-stack e-commerce solution for admin management',
+      codeUrl: '',
+      liveUrl: 'https://waterfill.vercel.app',
       category: ProjectCategory.WEB_APP,
     },
     {
       name: 'Task Management System',
-      stacks: 'Vue.js, Firebase, Vuetify',
+      stacks: 'NextJS, Shadcn UI, PostgreSQL, Tailwind CSS',
       description:
-        'Real-time collaborative task management application with team features',
-      codeUrl: 'https://github.com/alfredo/taskmanager',
-      liveUrl: 'https://alfredo-tasks.com',
+        'Collection of links to various social media platforms that is categorized for easy access with admin control panel',
+      codeUrl: '',
+      liveUrl: 'https://fbcollections.vercel.app/client',
+      category: ProjectCategory.WEB_APP,
+    },
+    {
+      name: 'Sales Management System',
+      stacks: 'NextJS, Shadcn UI, PostgreSQL, Tailwind CSS',
+      description:
+        'A mobile-first project for managing sales, customers purchases and inventory.',
+      codeUrl: '',
+      liveUrl: 'https://dreamy.vercel.app/',
       category: ProjectCategory.WEB_APP,
     },
   ];
