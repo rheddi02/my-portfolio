@@ -1,45 +1,51 @@
 <div class="w-full bg-gray-900 text-gray-100">
   <div class="">
-    <header class="h-screen flex flex-col mr-10 pt-32 pl-52 ml-auto fixed">
-      <div class="flex flex-col gap-2 flex-grow">
+    <header class="h-screen flex flex-col mr-10 pt-32 pl-52 ml-auto fixed z-50 pointer-events-none">
+      <div class="flex flex-col gap-2 flex-grow pointer-events-none">
         <p class="text-5xl font-bold">{{ profile.name }}</p>
         <p class="text-xl">{{ profile.position }}</p>
         <p class="text-muted-foreground w-1/2">
           {{ profile.description }}
         </p>
       </div>
-      <div class="flex flex-col gap-4 my-8">
-        <p
-          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
+      <div class="flex flex-col gap-4 my-8 pointer-events-auto">
+        <a
+          (click)="scrollToSection('about', $event)"
+          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors block py-1"
         >
           About Me
-        </p>
-        <p
-          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
+        </a>
+        <a
+          (click)="scrollToSection('experience', $event)"
+          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors block py-1"
         >
           Work Experience
-        </p>
-        <p
-          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
+        </a>
+        <a
+          (click)="scrollToSection('project', $event)"
+          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors block py-1"
         >
           Projects
-        </p>
+        </a>
       </div>
-      <app-social></app-social>
+      <div class="pointer-events-auto">
+        <app-social></app-social>
+      </div>
     </header>
-    <main class="h-screen overflow-auto relative">
-      <div class="pr-40 pt-32 w-1/2 ml-auto">
-        <section class="mb-32">
+    <main class="h-screen overflow-auto relative scroll-mt-32">
+      <div class="pr-40 w-1/2 ml-auto">
+        <section class="mt-32 scroll-mt-32" id="about">
           <app-about></app-about>
         </section>
-        <section class="mb-32">
+        <section class="mt-32 scroll-mt-32" id="experience">
           <app-experience></app-experience>
         </section>
-        <section class="mb-32">
+
+        <section class="mt-32 scroll-mt-32" id="project">
           <app-project></app-project>
         </section>
 
-        <section class="mb-32">
+        <section class="my-32">
           <h2 class="text-2xl font-semibold text-primary mb-4">
             Currently Learning
           </h2>
