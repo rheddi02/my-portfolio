@@ -5,9 +5,15 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:my-angular-portfolio": "node dist/my-angular-portfolio/server/server.mjs"
+    "serve:ssr:my-angular-portfolio": "node dist/my-angular-portfolio/server/server.mjs",
+    "start:prod": "NODE_ENV=production node dist/my-angular-portfolio/server/server.mjs",
+    "docker:build": "docker build -t angular-portfolio .",
+    "docker:run": "docker run -p 4000:4000 angular-portfolio",
+    "docker:dev": "docker-compose up --build",
+    "docker:prod": "docker-compose -f docker-compose.yml up -d"
   },
   "prettier": {
     "overrides": [

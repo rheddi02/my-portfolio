@@ -13,6 +13,18 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
+ * Health check endpoint for Docker
+ */
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    version: process.env['npm_package_version'] || '1.0.0'
+  });
+});
+
+/**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
  *
