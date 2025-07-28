@@ -13,11 +13,14 @@ export class AboutService {
     <strong class="text-foreground">Node.js</strong>, and
     <strong class="text-foreground">PostgreSQL</strong>, with a strong
     foundation in performance optimization, RESTful APIs, and DevOps.
+    I also have basic knowledge of <strong class="text-foreground">GraphQL</strong>, <strong class="text-foreground">NestJS</strong>, <strong class="text-foreground">Angular</strong>, and <strong class="text-foreground">MongoDB</strong>, allowing me to adapt quickly to modern tech stacks and contribute across the full development lifecycle.
+
     <p class="text-muted-foreground leading-relaxed">
     My journey in web development started with a curiosity for creating
     interactive experiences that solve real-world problems. I believe in writing
     clean, maintainable code and staying up-to-date with the latest technologies
     and best practices.
+
   </p>`,
       // 'Experienced full stack developer with a focus on building scalable web applications. Proficient in modern frameworks and technologies.',
     yearsOfExperience: 6,
