@@ -55,9 +55,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 print_status "Installing Node.js..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
-nvm install 18
-nvm use 18
-nvm alias default 18
+nvm install 22
+nvm use 22
+nvm alias default 22
 
 # Configure firewall (if iptables is used)
 print_status "Configuring firewall rules..."

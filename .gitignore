@@ -6,6 +6,10 @@
 /out-tsc
 /bazel-out
 
+# But allow dist folder for production deployments when needed
+# (dist folder will be created locally for production builds)
+!/dist/my-angular-portfolio/
+
 # Node
 /node_modules
 npm-debug.log

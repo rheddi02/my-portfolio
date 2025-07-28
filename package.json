@@ -1,5 +1,5 @@
 {
-  "name": "my-angular-portfolio",
+  "name": "my-portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,12 +8,15 @@
     "build:ssr": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:my-angular-portfolio": "node dist/my-angular-portfolio/server/server.mjs",
-    "start:prod": "NODE_ENV=production node dist/my-angular-portfolio/server/server.mjs",
-    "docker:build": "docker build -t angular-portfolio .",
-    "docker:run": "docker run -p 4000:4000 angular-portfolio",
+    "serve:ssr:my-portfolio": "node dist/my-portfolio/server/server.mjs",
+    "start:prod": "NODE_ENV=production node dist/my-portfolio/server/server.mjs",
+    "docker:build": "docker build -t my-portfolio .",
+    "docker:run": "docker run -p 4000:4000 my-portfolio",
     "docker:dev": "docker-compose up --build",
-    "docker:prod": "docker-compose -f docker-compose.yml up -d"
+    "docker:prod": "docker-compose -f docker-compose.yml up -d",
+    "check-build": "./check-build.sh",
+    "build-and-deploy": "./deploy-to-ec2.sh",
+    "docker:prod-only": "./check-build.sh && docker-compose -f docker-compose.prod.yml up -d"
   },
   "prettier": {
     "overrides": [

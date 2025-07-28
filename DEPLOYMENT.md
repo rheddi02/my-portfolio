@@ -63,35 +63,23 @@ Access your application at:
    terraform apply
    ```
 
-   **Performance Note**: For t3.micro instances, consider running the optimization script:
-   ```bash
-   # After EC2 is launched, optimize for Docker performance
-   ssh -i ~/.ssh/your-key.pem ec2-user@13.239.20.18
-   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/optimize-ec2.sh | bash
-   sudo reboot
-   ```
-
 2. **Connect and Deploy**
    ```bash
    # SSH to your instance
    ssh -i ~/.ssh/your-key.pem ec2-user@13.239.20.18
    
    # Run setup script
-   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/setup-ec2.sh | bash
-   
-   # Optimize for performance (recommended for t3.micro)
-   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/optimize-ec2.sh | bash
-   sudo reboot
+   curl -sSL https://raw.githubusercontent.com/rheddi02/my-portfolio/main/aws/setup-ec2.sh | bash
    
    # Log back in and deploy
    ssh -i ~/.ssh/your-key.pem ec2-user@13.239.20.18
    cd ~/apps
    
    # Use fast deployment script
-   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/fast-deploy.sh | bash
+   curl -sSL https://raw.githubusercontent.com/rheddi02/my-portfolio/main/aws/fast-deploy.sh | bash
    
    # Set up SSL for itsmealfred.site
-   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/setup-ssl.sh | bash
+   curl -sSL https://raw.githubusercontent.com/rheddi02/my-portfolio/main/aws/setup-ssl.sh | bash
    ```
 
 #### Option B: Manual Deployment
