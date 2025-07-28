@@ -1,6 +1,6 @@
 <div class="w-full bg-gray-900 text-gray-100">
-  <div class="mx-auto grid grid-cols-2 gap-5">
-    <div class="h-screen flex flex-col mr-10 pt-32 w-2/3 ml-auto">
+  <div class="">
+    <header class="h-screen flex flex-col mr-10 pt-32 pl-52 ml-auto fixed">
       <div class="flex flex-col gap-2 flex-grow">
         <p class="text-5xl font-bold">{{ profile.name }}</p>
         <p class="text-xl">{{ profile.position }}</p>
@@ -26,17 +26,17 @@
         </p>
       </div>
       <app-social></app-social>
-    </div>
-    <div class="h-screen overflow-y-auto pt-32">
-      <div class="w-2/3 mr-auto">
-        <section class="mb-32" id="about">
+    </header>
+    <main class="h-screen overflow-auto relative">
+      <div class="pr-40 pt-32 w-1/2 ml-auto">
+        <section class="mb-32">
           <app-about></app-about>
         </section>
         <section class="mb-32">
-            <app-experience></app-experience>
+          <app-experience></app-experience>
         </section>
         <section class="mb-32">
-            <app-project></app-project>
+          <app-project></app-project>
         </section>
 
         <section class="mb-32">
@@ -52,6 +52,6 @@
           </ul>
         </section>
       </div>
-    </div>
+    </main>
   </div>
 </div>
