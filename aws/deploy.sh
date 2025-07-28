@@ -97,11 +97,11 @@ fi
 
 # Build Docker image
 print_status "Building Docker image..."
-docker build -t $DOCKER_IMAGE_NAME .
+docker build -t $DOCKER_IMAGE_NAME . --no-cache
 
 # Start services with Docker Compose
 print_status "Starting services with Docker Compose..."
-docker-compose up -d
+docker-compose up -d --build
 
 # Wait for services to start
 print_status "Waiting for services to start..."

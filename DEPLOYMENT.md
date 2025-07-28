@@ -125,6 +125,11 @@ Access your application at:
    # Deploy
    docker-compose up -d
    
+   # If you get "ng not found" error, rebuild the image:
+   docker-compose down
+   docker-compose build --no-cache
+   docker-compose up -d
+   
    # Set up SSL for itsmealfred.site (after DNS is configured)
    ./aws/setup-ssl.sh
    ```
@@ -229,7 +234,22 @@ docker-compose logs -f angular-portfolio
 
 ### Common Issues
 
-1. **Port Already in Use**
+1. **"ng not found" Error During Docker Build**
+   ```bash
+   # This happens when Angular CLI isn't installed in the container
+   # The Dockerfile has been fixed, but if you encounter this:
+   
+   # Stop containers
+   docker-compose down
+   
+   # Rebuild without cache
+   docker-compose build --no-cache
+   
+   # Start again
+   docker-compose up -d
+   ```
+
+2. **Port Already in Use**
    ```bash
    sudo netstat -tlnp | grep :80
    sudo kill -9 <process-id>

@@ -9,17 +9,20 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production && npm cache clean --force
+# Install all dependencies (including devDependencies for build)
+RUN npm ci && npm cache clean --force
 
 # Copy source code
 COPY . .
 
 # Build the application for production
-RUN npm run build
+RUN npm run build:ssr
 
 # Stage 2: Production stage
 FROM node:22-alpine AS production
+
+# Install curl for health checks
+RUN apk add --no-cache curl
 
 # Create app directory
 WORKDIR /app
