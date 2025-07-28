@@ -1,0 +1,120 @@
+<div class="w-full bg-gray-900 text-gray-100">
+  <div class="mx-auto grid grid-cols-2 gap-5">
+    <div class="h-screen flex flex-col mr-10 pt-32 w-2/3 ml-auto">
+      <div class="flex flex-col gap-2 flex-grow">
+        <p class="text-5xl font-bold">{{ profile.name }}</p>
+        <p class="text-xl">{{ profile.position }}</p>
+        <p class="text-muted-foreground w-1/2">
+          {{ profile.description }}
+        </p>
+      </div>
+      <div class="flex flex-col gap-4 my-8">
+        <p
+          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
+        >
+          About Me
+        </p>
+        <p
+          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
+        >
+          Work Experience
+        </p>
+        <p
+          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
+        >
+          Projects
+        </p>
+      </div>
+      <app-social></app-social>
+    </div>
+    <div class="h-screen overflow-y-auto pt-32">
+      <div class="w-2/3 mr-auto">
+        <section class="mb-8" id="about">
+          <app-about></app-about>
+        </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-primary mb-4">Projects</h2>
+          <div class="space-y-6">
+            <app-project-card
+              *ngFor="let project of projects; let i = index"
+              [name]="project.name"
+              [stacks]="project.stacks"
+              [description]="project.description"
+              [codeUrl]="project.codeUrl"
+              [liveUrl]="project.liveUrl"
+              [class.blur-card]="isCardBlurred(i)"
+              (mouseenter)="onCardHover(i)"
+              (mouseleave)="onCardLeave()"
+            >
+            </app-project-card>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-primary mb-4">
+            🏢 Experience
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-xl font-medium text-primary">
+                Web Developer – Freelance
+              </h3>
+              <p class="text-sm text-muted-foreground italic mb-2">
+                Jan 2022 – Present
+              </p>
+              <ul
+                class="list-disc list-inside text-muted-foreground space-y-1 ml-4"
+              >
+                <li>Built 10+ websites for local businesses</li>
+                <li>Migrated legacy PHP apps to React/Node stacks</li>
+                <li>Improved SEO and Core Web Vitals</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium text-primary">
+                Frontend Developer – XYZ Agency
+              </h3>
+              <p class="text-sm text-muted-foreground italic mb-2">
+                Jun 2020 – Dec 2021
+              </p>
+              <ul
+                class="list-disc list-inside text-muted-foreground space-y-1 ml-4"
+              >
+                <li>Built landing pages and dashboards using Vue.js</li>
+                <li>Collaborated cross-functionally to deliver features</li>
+                <li>Focused on performance optimization</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-primary mb-4">
+            📜 Certifications
+          </h2>
+          <ul
+            class="list-disc list-inside text-muted-foreground space-y-1 ml-4"
+          >
+            <li>Meta Front-End Developer Certificate (Coursera)</li>
+            <li>AWS Cloud Practitioner</li>
+            <li>FreeCodeCamp JavaScript Algorithms & Data Structures</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-primary mb-4">
+            🧠 Currently Learning
+          </h2>
+          <ul
+            class="list-disc list-inside text-muted-foreground space-y-1 ml-4"
+          >
+            <li>Kubernetes & CI/CD with GitHub Actions</li>
+            <li>Three.js for 3D web experiences</li>
+            <li>AI integration via OpenAI APIs</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
