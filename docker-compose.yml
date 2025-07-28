@@ -1,6 +1,9 @@
 services:
   angular-portfolio:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
     ports:
       - "4000:4000"
     environment:
@@ -15,6 +18,13 @@ services:
       start_period: 40s
     networks:
       - portfolio-network
+    # Resource limits for better performance on small instances
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
 
   # Nginx reverse proxy (optional for production)
   nginx:
@@ -26,10 +36,18 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./ssl:/etc/nginx/ssl:ro
     depends_on:
-      - angular-portfolio
+      angular-portfolio:
+        condition: service_healthy
     restart: unless-stopped
     networks:
       - portfolio-network
+    # Resource limits for nginx
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
 
 networks:
   portfolio-network:

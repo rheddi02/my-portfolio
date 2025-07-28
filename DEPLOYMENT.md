@@ -63,6 +63,14 @@ Access your application at:
    terraform apply
    ```
 
+   **Performance Note**: For t3.micro instances, consider running the optimization script:
+   ```bash
+   # After EC2 is launched, optimize for Docker performance
+   ssh -i ~/.ssh/your-key.pem ec2-user@13.239.20.18
+   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/optimize-ec2.sh | bash
+   sudo reboot
+   ```
+
 2. **Connect and Deploy**
    ```bash
    # SSH to your instance
@@ -71,11 +79,16 @@ Access your application at:
    # Run setup script
    curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/setup-ec2.sh | bash
    
-   # Log out and back in, then deploy
-   exit
+   # Optimize for performance (recommended for t3.micro)
+   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/optimize-ec2.sh | bash
+   sudo reboot
+   
+   # Log back in and deploy
    ssh -i ~/.ssh/your-key.pem ec2-user@13.239.20.18
    cd ~/apps
-   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/deploy.sh | bash
+   
+   # Use fast deployment script
+   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/fast-deploy.sh | bash
    
    # Set up SSL for itsmealfred.site
    curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/setup-ssl.sh | bash
@@ -123,6 +136,10 @@ Access your application at:
    cd my-angular-portfolio
    
    # Deploy
+   # For slow performance, use the optimized deployment:
+   ./aws/fast-deploy.sh
+   
+   # Or standard deployment:
    docker-compose up -d
    
    # If you get "ng not found" error, rebuild the image:
@@ -135,6 +152,47 @@ Access your application at:
    ```
 
 ## 🔧 Configuration
+
+### Performance Optimization for EC2
+
+#### For t3.micro instances (1GB RAM), Docker builds can be slow. Here are optimizations:
+
+1. **Run EC2 Optimization Script**
+   ```bash
+   # This sets up swap, optimizes Docker, and improves performance
+   curl -sSL https://raw.githubusercontent.com/yourusername/my-angular-portfolio/main/aws/optimize-ec2.sh | bash
+   sudo reboot
+   ```
+
+2. **Use Fast Deployment Script**
+   ```bash
+   # Optimized deployment that manages resources better
+   ./aws/fast-deploy.sh
+   ```
+
+3. **Monitor Resources**
+   ```bash
+   # Check memory and Docker usage
+   ./monitor-resources.sh
+   
+   # Or manually
+   free -h
+   docker stats
+   docker system df
+   ```
+
+4. **Manual Optimizations**
+   ```bash
+   # Clean up Docker regularly
+   docker system prune -f --volumes
+   
+   # Build with memory limits if needed
+   docker-compose build --memory=1g
+   
+   # Use BuildKit for faster builds
+   export DOCKER_BUILDKIT=1
+   export COMPOSE_DOCKER_CLI_BUILD=1
+   ```
 
 ### Environment Variables
 
@@ -234,7 +292,27 @@ docker-compose logs -f angular-portfolio
 
 ### Common Issues
 
-1. **"ng not found" Error During Docker Build**
+1. **"docker-compose up" is slow on EC2**
+   ```bash
+   # This is common on t3.micro instances. Solutions:
+   
+   # Option 1: Use the fast deployment script
+   ./aws/fast-deploy.sh
+   
+   # Option 2: Optimize the instance first
+   ./aws/optimize-ec2.sh
+   sudo reboot
+   
+   # Option 3: Build and start services separately
+   docker-compose build angular-portfolio
+   docker-compose up -d angular-portfolio
+   # Wait for health check, then start nginx
+   docker-compose up -d nginx
+   
+   # Option 4: Consider upgrading to t3.small (2GB RAM)
+   ```
+
+2. **"ng not found" Error During Docker Build**
    ```bash
    # This happens when Angular CLI isn't installed in the container
    # The Dockerfile has been fixed, but if you encounter this:
