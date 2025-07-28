@@ -1,6 +1,8 @@
 <div class="w-full bg-gray-900 text-gray-100">
   <div class="">
-    <header class="h-screen flex flex-col mr-10 pt-32 pl-52 ml-auto fixed z-50 pointer-events-none">
+    <header
+      class="h-screen flex flex-col mr-10 pt-32 pl-52 ml-auto fixed z-50 pointer-events-none"
+    >
       <div class="flex flex-col gap-2 flex-grow pointer-events-none">
         <p class="text-5xl font-bold">{{ profile.name }}</p>
         <p class="text-xl">{{ profile.position }}</p>
@@ -8,26 +10,32 @@
           {{ profile.description }}
         </p>
       </div>
-      <div class="flex flex-col gap-4 my-8 pointer-events-auto">
-        <a
-          (click)="scrollToSection('about', $event)"
-          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors block py-1"
-        >
-          About Me
-        </a>
-        <a
-          (click)="scrollToSection('experience', $event)"
-          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors block py-1"
-        >
-          Work Experience
-        </a>
-        <a
-          (click)="scrollToSection('project', $event)"
-          class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors block py-1"
-        >
-          Projects
-        </a>
-      </div>
+      <span class="space-y-5 my-8 pointer-events-auto w-40">
+        <p>
+          <a
+            (click)="scrollToSection('about', $event)"
+            class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors py-1"
+          >
+            About Me
+          </a>
+        </p>
+        <p>
+          <a
+            (click)="scrollToSection('experience', $event)"
+            class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors py-1"
+          >
+            Work Experience
+          </a>
+        </p>
+        <p>
+          <a
+            (click)="scrollToSection('project', $event)"
+            class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors py-1"
+          >
+            Projects
+          </a>
+        </p>
+      </span>
       <div class="pointer-events-auto">
         <app-social></app-social>
       </div>
