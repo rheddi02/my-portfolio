@@ -1,1 +1,14 @@
-<p>project works!</p>
+<div class="space-y-6">
+  <app-project-card
+    *ngFor="let project of projects; let i = index"
+    [name]="project.name"
+    [stacks]="project.stacks"
+    [description]="project.description"
+    [codeUrl]="project.codeUrl"
+    [liveUrl]="project.liveUrl"
+    [class.blur-card]="isCardBlurred(i)"
+    (mouseenter)="onCardHover(i)"
+    (mouseleave)="onCardLeave()"
+  >
+  </app-project-card>
+</div>

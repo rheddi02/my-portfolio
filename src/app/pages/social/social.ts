@@ -11,7 +11,6 @@ import { SocialService } from '../../services/social.service';
   styleUrl: './social.scss'
 })
 export class Social implements OnInit {
-  socialLink!: SocialLink
   socialLinks: SocialLink[] = [];
 
   constructor( 

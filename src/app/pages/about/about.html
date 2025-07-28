@@ -1,27 +1,22 @@
 <!-- <h2 class="text-2xl font-semibold text-primary mb-4">About Me</h2> -->
 <div class="space-y-4">
-  <p class="text-muted-foreground leading-relaxed">
-    I'm a passionate
-    <strong class="text-foreground">Full Stack Web Developer</strong> with 6+
-    years of experience building scalable, user-centric applications. I
-    specialize in <strong class="text-foreground">React</strong>,
-    <strong class="text-foreground">Node.js</strong>, and
-    <strong class="text-foreground">PostgreSQL</strong>, with a strong
-    foundation in performance optimization, RESTful APIs, and DevOps.
+  <p class="text-muted-foreground leading-relaxed" [innerHTML]="about.description">
   </p>
-
-  <p class="text-muted-foreground leading-relaxed">
+  <!-- <ul>
+    <li *ngFor="let achievement of about.achievements">{{ achievement }}</li>
+  </ul> -->
+  <!-- <p class="text-muted-foreground leading-relaxed">
     My journey in web development started with a curiosity for creating
     interactive experiences that solve real-world problems. I believe in writing
     clean, maintainable code and staying up-to-date with the latest technologies
     and best practices.
-  </p>
+  </p> -->
 
-  <p class="text-muted-foreground leading-relaxed">
+  <!-- <p class="text-muted-foreground leading-relaxed">
     When I'm not coding, you can find me contributing to open-source projects,
     writing technical articles, or exploring new frameworks and tools that can
     improve development workflows.
-  </p>
+  </p> -->
 
   <div class="mt-6 p-4 bg-gray-800 rounded-lg border border-gray-700">
     <h4 class="text-lg font-medium text-primary mb-2">
@@ -46,10 +41,9 @@
       </li>
     </ul>
   </div>
-  <section class="mb-8">
+  <!-- <section class="mb-8">
     <h2 class="text-2xl font-semibold text-primary mb-4">Skills</h2>
     <div class="space-y-4">
-      <!-- insert about.skills here -->
       <div
         *ngFor="let skill of about.skills"
         class="flex space-x-2 flex-col"
@@ -61,30 +55,6 @@
           <li *ngFor="let item of skill.lists">{{ item }}</li>
         </ul>
       </div>
-      <!-- <div>
-        <h3 class="text-xl font-medium text-primary mb-2">Frontend</h3>
-        <ul class="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-          <li>React.js, Next.js, Vue.js, Angular</li>
-          <li>Tailwind CSS, Sass, Material UI, Shadcn UI, Typescript</li>
-          <li>HTML5, CSS3, JavaScript (ES6+)</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-medium text-primary mb-2">Backend</h3>
-        <ul class="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-          <li>Node.js, Express.js, NestJS, AdonisJS, PHP</li>
-          <li>MySQL, PostgreSQL, MongoDB</li>
-          <li>REST & GraphQL APIs</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-medium text-primary mb-2">DevOps & Tools</h3>
-        <ul class="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-          <li>Docker, GitHub Actions, Nginx</li>
-          <li>AWS (EC2, S3, RDS)</li>
-          <li>Git, Jira, Figma, VSCode, Slack, Discord</li>
-        </ul>
-      </div> -->
     </div>
-  </section>
+  </section> -->
 </div>

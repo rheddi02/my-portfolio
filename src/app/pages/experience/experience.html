@@ -1,1 +1,15 @@
-<p>experience works!</p>
+<div class="flex flex-col gap-10">
+  <div *ngFor="let experience of experiences" class="space-y-4">
+    <h3 class="text-xl font-medium text-primary">
+      {{ experience.position }} - {{ experience.company }}
+    </h3>
+    <p class="text-sm text-muted-foreground italic mb-2">
+      {{ experience.dateStart }} – {{ experience.dateEnd }}
+    </p>
+    <ul class="list-disc list-inside text-muted-foreground space-y-1 ml-4">
+      <li *ngFor="let achievement of experience.achievements">
+        {{ achievement }}
+      </li>
+    </ul>
+  </div>
+</div>

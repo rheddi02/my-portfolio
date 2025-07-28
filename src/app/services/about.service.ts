@@ -6,8 +6,20 @@ export class AboutService {
   private about: About = {
     name: 'John Doe',
     position: 'Senior Full Stack Web Developer',
-    description:
-      'Experienced full stack developer with a focus on building scalable web applications. Proficient in modern frameworks and technologies.',
+    description: `I'm a passionate
+    <strong class="text-foreground">Full Stack Web Developer</strong> with 6+
+    years of experience building scalable, user-centric applications. I
+    specialize in <strong class="text-foreground">React</strong>,
+    <strong class="text-foreground">Node.js</strong>, and
+    <strong class="text-foreground">PostgreSQL</strong>, with a strong
+    foundation in performance optimization, RESTful APIs, and DevOps.
+    <p class="text-muted-foreground leading-relaxed">
+    My journey in web development started with a curiosity for creating
+    interactive experiences that solve real-world problems. I believe in writing
+    clean, maintainable code and staying up-to-date with the latest technologies
+    and best practices.
+  </p>`,
+      // 'Experienced full stack developer with a focus on building scalable web applications. Proficient in modern frameworks and technologies.',
     yearsOfExperience: 6,
     achievements: [
       'Integrated Stripe payment systems for recurring billing, one-time payments, and POS workflows, ensuring PCI-compliant implementations.',
@@ -29,7 +41,7 @@ export class AboutService {
       },
       {
         category: 'backend',
-        lists: ['Node.js, Express.js, AdonisJS', 'REST APIs, GraphQL'],
+        lists: ['Node.js, Express.js, AdonisJS, NestJS', 'MySQL, PostgreSQL, MongoDB', 'REST APIs, GraphQL'],
       },
       {
         category: 'tools',
