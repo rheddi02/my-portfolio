@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-badge',
-  imports: [NgStyle],
+  imports: [],
   templateUrl: './badge.html',
   styleUrl: './badge.scss'
 })
