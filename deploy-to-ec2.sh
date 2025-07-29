@@ -77,7 +77,17 @@ cp package*.json $DEPLOY_DIR/
 cp Dockerfile.prod $DEPLOY_DIR/Dockerfile  # Copy as Dockerfile for docker-compose
 cp docker-compose.prod.yml $DEPLOY_DIR/docker-compose.yml  # Copy as docker-compose.yml
 cp nginx.conf $DEPLOY_DIR/
-mkdir -p $DEPLOY_DIR/ssl
+
+# Copy SSL certificates if they exist
+if [ -d "ssl" ] && [ -f "ssl/fullchain.pem" ] && [ -f "ssl/prevkey.pem" ]; then
+    print_status "Copying SSL certificates..."
+    mkdir -p $DEPLOY_DIR/ssl
+    cp ssl/fullchain.pem $DEPLOY_DIR/ssl/cert.pem
+    cp ssl/prevkey.pem $DEPLOY_DIR/ssl/key.pem
+else
+    print_warning "SSL certificates not found - creating empty ssl directory"
+    mkdir -p $DEPLOY_DIR/ssl
+fi
 
 # Create deployment archive
 print_status "Creating deployment archive..."
@@ -163,13 +173,13 @@ fi
 echo ""
 print_status "🎉 Deployment completed successfully!"
 print_status "Your application is running at:"
-print_status "  - https://itsmealfred.site"
-print_status "  - http://$EC2_HOST:4000 (if port 4000 is open)"
+print_status "  - https://itsmealfred.site (SSL enabled)"
+print_status "  - http://$EC2_HOST:4000 (direct access if port 4000 is open)"
 
 echo ""
 print_warning "Next steps:"
-print_warning "  1. Set up SSL: ssh -i $KEY_PATH $EC2_USER@$EC2_HOST './aws/setup-ssl.sh'"
-print_warning "  2. Monitor logs: ssh -i $KEY_PATH $EC2_USER@$EC2_HOST 'cd my-portfolio && docker-compose logs -f'"
+print_warning "  1. Monitor logs: ssh -i $KEY_PATH $EC2_USER@$EC2_HOST 'cd my-portfolio && docker-compose logs -f'"
+print_warning "  2. Certificate will auto-renew before Oct 26, 2025"
 
 echo ""
 print_status "To update later, just run this script again!"
