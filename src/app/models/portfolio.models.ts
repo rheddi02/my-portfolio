@@ -11,7 +11,8 @@ export interface Profile {
   resumeUrl?: string;
   yearsOfExperience?: number;
   availableForWork?: boolean;
-  description: string
+  description: string;
+  learning?: string[];
 }
 
 export interface Experience {

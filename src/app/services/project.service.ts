@@ -41,6 +41,14 @@ export class ProjectService {
       liveUrl: 'https://dreamy.vercel.app/',
       category: ProjectCategory.WEB_APP,
     },
+    {
+      name: 'Horse Racing System',
+      stacks: 'Vue.js, Tailwind CSS, TypeScript',
+      description: 'I developed a SaaS horse racing platform that allows users to sign up and track live race schedules and results. Subscribers get access to real-time updates for specific horses, with no delay, and receive push notifications even when the app is not focused. The platform is cloud-hosted, scalable, and designed with performance and user engagement in mind.',
+      codeUrl: '',
+      liveUrl: '',
+      category: ProjectCategory.WEB_APP,
+    }
   ];
   getProjects(): IProject[] {
     return this.projects;

@@ -5,4 +5,5 @@ export interface IExperience {
   dateStart: string;
   dateEnd?: string;
   achievements: string[];
+  stacks?: string[];
 }

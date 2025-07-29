@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IExperience } from '../../models/experience.models';
 import { ExperienceService } from '../../services/experience.service';
+import { Badge } from "../../components/badge/badge";
 
 @Component({
   selector: 'app-experience',
-  imports: [CommonModule],
+  imports: [CommonModule, Badge],
   templateUrl: './experience.html',
   styleUrl: './experience.scss'
 })

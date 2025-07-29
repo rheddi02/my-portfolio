@@ -52,10 +52,8 @@
         <h2 class="text-xl font-semibold text-primary mb-4">
           Currently Learning
         </h2>
-        <ul class="list-disc list-inside text-muted-foreground space-y-2 ml-4 text-sm">
-          <li>Kubernetes & CI/CD with GitHub Actions</li>
-          <li>AWS Services (S3, EC2, RDS)</li>
-          <li>AI integration via OpenAI APIs</li>
+        <ul *ngFor="let learning of profile.learning" class="list-disc list-inside text-muted-foreground space-y-2 ml-4 text-sm">
+          <li>{{ learning }}</li>
         </ul>
       </section>
     </main>
@@ -116,18 +114,14 @@
           <app-project></app-project>
         </section>
 
-        <section class="my-32">
-          <h2 class="text-2xl font-semibold text-primary mb-4">
-            Currently Learning
-          </h2>
-          <ul
-            class="list-disc list-inside text-muted-foreground space-y-1 ml-4"
-          >
-            <li>Kubernetes & CI/CD with GitHub Actions</li>
-            <li>AWS Services (S3, EC2, RDS)</li>
-            <li>AI integration via OpenAI APIs</li>
-          </ul>
-        </section>
+        <section class="py-8">
+        <h2 class="text-xl font-semibold text-primary mb-4">
+          Currently Learning
+        </h2>
+        <ul *ngFor="let learning of profile.learning" class="list-disc list-inside text-muted-foreground space-y-2 ml-4">
+          <li>{{ learning }}</li>
+        </ul>
+      </section>
       </div>
     </main>
   </div>

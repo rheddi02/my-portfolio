@@ -4,7 +4,6 @@ import { About } from '../models/about.models';
 @Injectable({ providedIn: 'root' })
 export class AboutService {
   private about: About = {
-    name: 'John Doe',
     position: 'Senior Full Stack Web Developer',
     description: `I'm a passionate
     <strong class="text-foreground">Full Stack Web Developer</strong> with 6+

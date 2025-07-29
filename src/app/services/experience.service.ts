@@ -9,8 +9,8 @@ export class ExperienceService {
       company: 'Freshclinics',
       position: 'Senior Software Engineer',
       description: 'Worked on various projects using React.js and Node.js',
-      dateStart: formatDate(new Date('2022-12-06')),
-      dateEnd: formatDate(new Date('2025-07-04')),
+      dateStart: formatDate(new Date('2022-12-06'), false, false),
+      dateEnd: formatDate(new Date('2025-07-04'), false),
       achievements: [
         'Implemented a new feature that improved user engagement by 20%',
         'Optimized existing codebase, reducing load times by 30%',
@@ -20,13 +20,28 @@ export class ExperienceService {
         'Take part on project migration from Vue.js to React.js',
         'Created reusable components to streamline development processes',
       ],
+      stacks: [
+        'React.js',
+        'Next.js',
+        'Node.js',
+        'Express.js',
+        'AdonisJS',
+        'MongoDB',
+        'GraphQL',
+        'PostgreSQL',
+        'TypeScript',
+        'Tailwind CSS',
+        'Shadcn UI',
+        'Stripe',
+      ],
     },
     {
       company: 'Qonvex',
       position: 'Backend Developer',
-      description: 'Focused on building responsive web applications using Vue.js and PHP',
-      dateStart: formatDate(new Date('2019-09-01')),
-      dateEnd: formatDate(new Date('2022-11-30')),
+      description:
+        'Focused on building responsive web applications using Vue.js and PHP',
+      dateStart: formatDate(new Date('2019-09-01'), false, false),
+      dateEnd: formatDate(new Date('2022-11-30'), false),
       achievements: [
         'Redesigned the user interface, resulting in a 25% increase in user satisfaction',
         'Collaborated with front-end developers to integrate RESTful APIs',
@@ -34,10 +49,18 @@ export class ExperienceService {
         'Led a team of 5 developers to deliver a major project ahead of schedule',
         'Mentored junior developers, enhancing team productivity',
       ],
+      stacks: [
+        'Vue.js',
+        'PHP',
+        'Laravel',
+        'MySQL',
+        'JavaScript',
+        'HTML',
+        'CSS',
+      ],
     },
   ];
   getExperiences(): IExperience[] {
     return this.experiences;
   }
 }
-

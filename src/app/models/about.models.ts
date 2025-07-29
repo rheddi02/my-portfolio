@@ -1,5 +1,4 @@
 export interface About {
-  name: string;
   position: string;
   description: string;
   skills: {
