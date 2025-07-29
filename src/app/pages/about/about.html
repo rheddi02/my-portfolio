@@ -1,28 +1,13 @@
 <!-- <h2 class="text-2xl font-semibold text-primary mb-4">About Me</h2> -->
-<div class="space-y-4">
-  <p class="text-muted-foreground leading-relaxed" [innerHTML]="about.description">
+<div class="space-y-4 lg:space-y-6">
+  <p class="text-muted-foreground leading-relaxed text-sm lg:text-base" [innerHTML]="about.description">
   </p>
-  <!-- <ul>
-    <li *ngFor="let achievement of about.achievements">{{ achievement }}</li>
-  </ul> -->
-  <!-- <p class="text-muted-foreground leading-relaxed">
-    My journey in web development started with a curiosity for creating
-    interactive experiences that solve real-world problems. I believe in writing
-    clean, maintainable code and staying up-to-date with the latest technologies
-    and best practices.
-  </p> -->
 
-  <!-- <p class="text-muted-foreground leading-relaxed">
-    When I'm not coding, you can find me contributing to open-source projects,
-    writing technical articles, or exploring new frameworks and tools that can
-    improve development workflows.
-  </p> -->
-
-  <div class="mt-6 p-4 bg-gray-800 rounded-lg border border-gray-700">
-    <h4 class="text-lg font-medium text-primary mb-2">
+  <div class="mt-4 lg:mt-6 p-3 lg:p-4 bg-gray-800 rounded-lg border border-gray-700">
+    <h4 class="text-base lg:text-lg font-medium text-primary mb-2 lg:mb-3">
       What I bring to the table:
     </h4>
-    <ul class="text-muted-foreground space-y-1">
+    <ul class="text-muted-foreground space-y-1 lg:space-y-2 text-sm lg:text-base">
       <li>
         • <strong class="text-foreground">Problem-solving mindset</strong> with
         attention to detail
@@ -41,20 +26,4 @@
       </li>
     </ul>
   </div>
-  <!-- <section class="mb-8">
-    <h2 class="text-2xl font-semibold text-primary mb-4">Skills</h2>
-    <div class="space-y-4">
-      <div
-        *ngFor="let skill of about.skills"
-        class="flex space-x-2 flex-col"
-      >
-        <h3 class="text-xl font-medium text-primary mb-2 capitalize">
-          {{ skill.category }}
-        </h3>
-        <ul class="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-          <li *ngFor="let item of skill.lists">{{ item }}</li>
-        </ul>
-      </div>
-    </div>
-  </section> -->
 </div>

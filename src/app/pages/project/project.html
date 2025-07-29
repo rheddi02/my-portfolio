@@ -1,4 +1,4 @@
-<div class="space-y-6">
+<div class="space-y-4 lg:space-y-6">
   <app-project-card
     *ngFor="let project of projects; let i = index"
     [name]="project.name"
@@ -9,6 +9,7 @@
     [class.blur-card]="isCardBlurred(i)"
     (mouseenter)="onCardHover(i)"
     (mouseleave)="onCardLeave()"
+    class="transition-all duration-300"
   >
   </app-project-card>
 </div>
