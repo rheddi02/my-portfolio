@@ -14,7 +14,9 @@
     </header>
 
     <!-- Mobile Navigation -->
-    <nav class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-40">
+    <nav
+      class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-40"
+    >
       <div class="flex justify-center space-x-8 py-4 px-6">
         <a
           (click)="scrollToSection('about', $event)"
@@ -39,10 +41,10 @@
 
     <!-- Mobile Main Content -->
     <main class="px-6">
-      <section class="py-8 scroll-mt-20" id="about">
+      <section class="py-8 scroll-mt-20" id="about2">
         <app-about></app-about>
       </section>
-      <section class="py-8 scroll-mt-20" id="experience">
+      <section class="py-8 scroll-mt-20" id="experience2">
         <app-experience></app-experience>
       </section>
       <section class="py-8 scroll-mt-20" id="project">
@@ -52,15 +54,17 @@
         <h2 class="text-xl font-semibold text-primary mb-4">
           Currently Learning
         </h2>
-        <ul *ngFor="let learning of profile.learning" class="list-disc list-inside text-muted-foreground space-y-2 ml-4 text-sm">
-          <li>{{ learning }}</li>
+        <ul
+          class="list-disc list-inside text-muted-foreground space-y-2 ml-4 text-sm"
+        >
+          <li *ngFor="let learning of profile.learning">{{ learning }}</li>
         </ul>
       </section>
     </main>
   </div>
 
   <!-- Desktop Layout -->
-  <div class="hidden lg:block ">
+  <div class="hidden lg:block">
     <header
       class="h-screen flex flex-col mr-10 pt-32 pl-52 ml-auto fixed z-50 pointer-events-none md:w-1/2"
     >
@@ -96,8 +100,7 @@
             Projects
           </a>
         </p>
-      </span>
-      <div class="pointer-events-auto">
+      </span>  <div class="pointer-events-auto">
         <app-social></app-social>
       </div>
     </header>
@@ -109,19 +112,19 @@
         <section class="mt-32 scroll-mt-32" id="experience">
           <app-experience></app-experience>
         </section>
-
         <section class="mt-32 scroll-mt-32" id="project">
           <app-project></app-project>
         </section>
-
         <section class="py-8">
-        <h2 class="text-xl font-semibold text-primary mb-4">
-          Currently Learning
-        </h2>
-        <ul *ngFor="let learning of profile.learning" class="list-disc list-inside text-muted-foreground space-y-2 ml-4">
-          <li>{{ learning }}</li>
-        </ul>
-      </section>
+          <h2 class="text-xl font-semibold text-primary mb-4">
+            Currently Learning
+          </h2>
+          <ul
+            class="list-disc list-inside text-muted-foreground space-y-2 ml-4"
+          >
+            <li *ngFor="let learning of profile.learning">{{ learning }}</li>
+          </ul>
+        </section>
       </div>
     </main>
   </div>
