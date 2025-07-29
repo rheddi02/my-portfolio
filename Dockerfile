@@ -1,25 +1,7 @@
-# Multi-stage Docker build for Angular SSR application
+# Production-only Dockerfile (no build stage)
+# Use this when you've already built the application locally
 
-# Stage 1: Build stage
-FROM node:22-alpine as builder
-
-# Set working directory
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install all dependencies (including devDependencies for build)
-RUN npm ci && npm cache clean --force
-
-# Copy source code
-COPY . .
-
-# Build the application for production
-RUN npm run build:ssr
-
-# Stage 2: Production stage
-FROM node:22-alpine AS production
+FROM node:18-alpine AS production
 
 # Install curl for health checks
 RUN apk add --no-cache curl
@@ -31,11 +13,11 @@ WORKDIR /app
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S angular -u 1001
 
-# Copy built application from builder stage
-COPY --from=builder --chown=angular:nodejs /app/dist ./dist
-COPY --from=builder --chown=angular:nodejs /app/package*.json ./
+# Copy pre-built application and package files
+COPY --chown=angular:nodejs ./dist ./dist
+COPY --chown=angular:nodejs ./package*.json ./
 
-# Install only production dependencies
+# Install only production dependencies (no devDependencies needed)
 RUN npm ci --only=production && npm cache clean --force
 
 # Switch to non-root user

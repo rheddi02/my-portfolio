@@ -74,8 +74,8 @@ print_status "Copying production files..."
 mkdir -p $DEPLOY_DIR/dist/
 cp -r dist/* $DEPLOY_DIR/dist/
 cp package*.json $DEPLOY_DIR/
-cp Dockerfile.prod $DEPLOY_DIR/Dockerfile  # Copy as Dockerfile for docker-compose
-cp docker-compose.prod.yml $DEPLOY_DIR/docker-compose.yml  # Copy as docker-compose.yml
+cp Dockerfile $DEPLOY_DIR/Dockerfile  # Copy as Dockerfile for docker-compose
+cp docker-compose.yml $DEPLOY_DIR/docker-compose.yml  # Copy as docker-compose.yml
 cp nginx.conf $DEPLOY_DIR/
 
 # Copy SSL certificates if they exist
@@ -183,4 +183,3 @@ print_warning "  2. Certificate will auto-renew before Oct 26, 2025"
 
 echo ""
 print_status "To update later, just run this script again!"
-EOF
