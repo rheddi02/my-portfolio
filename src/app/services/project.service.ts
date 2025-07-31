@@ -18,7 +18,7 @@ export class ProjectService {
       name: 'Admin Panel Platform',
       stacks: ['React', 'NextJS', 'PostgreSQL', 'Tailwind CSS', 'Shadcn UI', 'NestJS'],
       description:
-        'Developed a full-stack e-commerce solution with comprehensive admin management features, including product catalog control, order tracking, user management, and sales reporting',
+        'Built a full-stack e-commerce platform with an integrated admin dashboard for managing products, users, orders, and real-time sales analytics using modern frameworks and best practices',
       codeUrl: '',
       liveUrl: 'https://waterfill.vercel.app',
       category: ProjectCategory.WEB_APP,
@@ -43,7 +43,7 @@ export class ProjectService {
     },
     {
       name: 'Horse Racing System',
-      stacks: ['Vue.js', 'Tailwind CSS', 'TypeScript'],
+      stacks: ['Vue.js', 'Tailwind CSS', 'TypeScript', 'PHP', 'Laravel'],
       description: 'I developed a SaaS horse racing platform that allows users to sign up and track live race schedules and results. Subscribers get access to real-time updates for specific horses, with no delay, and receive push notifications even when the app is not focused. The platform is cloud-hosted, scalable, and designed with performance and user engagement in mind.',
       codeUrl: '',
       liveUrl: '',

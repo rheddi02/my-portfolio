@@ -32,6 +32,16 @@ export class AboutService {
       'Built scalable REST APIs and microservices for internal tools and third-party integrations using Express.js and AdonisJS.',
       'Collaborated closely with UI/UX teams using Tailwind CSS and TypeScript, ensuring modern, maintainable frontend codebases.',
     ],
+    activeSKills: [
+      `<strong class="text-muted-foreground">Problem-solving mindset</strong> with
+        attention to detail`,
+        `<strong class="text-muted-foreground">Team collaboration</strong> and
+        mentoring experience`,
+        `<strong class="text-muted-foreground">Performance optimization</strong> and
+        scalability focus`,
+        `<strong class="text-muted-foreground">User experience</strong> centered
+        development approach`
+    ],
     skills: [
       {
         category: 'frontend',

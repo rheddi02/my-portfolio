@@ -8,21 +8,8 @@
       What I bring to the table:
     </h4>
     <ul class="text-muted-foreground space-y-1 lg:space-y-2 text-sm lg:text-base">
-      <li>
-        • <strong class="text-foreground">Problem-solving mindset</strong> with
-        attention to detail
-      </li>
-      <li>
-        • <strong class="text-foreground">Team collaboration</strong> and
-        mentoring experience
-      </li>
-      <li>
-        • <strong class="text-foreground">Performance optimization</strong> and
-        scalability focus
-      </li>
-      <li>
-        • <strong class="text-foreground">User experience</strong> centered
-        development approach
+      <li *ngFor="let skill of about.activeSKills">
+        • <span [innerHTML]="skill"></span>
       </li>
     </ul>
   </div>
