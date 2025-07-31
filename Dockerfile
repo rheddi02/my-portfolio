@@ -18,7 +18,7 @@ COPY --chown=angular:nodejs ./dist ./dist
 COPY --chown=angular:nodejs ./package*.json ./
 
 # Install only production dependencies (no devDependencies needed)
-RUN npm ci --only=production && npm cache clean --force
+RUN npm install --omit=dev --legacy-peer-deps && npm cache clean --force
 
 # Switch to non-root user
 USER angular

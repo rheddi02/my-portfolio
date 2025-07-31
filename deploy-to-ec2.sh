@@ -48,7 +48,7 @@ print_status "Cleaning previous build..."
 rm -rf dist/
 
 print_status "Installing dependencies..."
-npm ci
+npm install --legacy-peer-deps
 
 print_status "Building for production..."
 npm run build:ssr
