@@ -1,4 +1,6 @@
-<div class="project-card p-3 lg:p-5 hover:bg-gray-700 hover:bg-opacity-50 transition-colors rounded-lg border border-gray-800">
+<div
+  class="project-card p-3 lg:p-5 hover:bg-gray-700 hover:bg-opacity-50 transition-colors rounded-lg border border-gray-800"
+>
   <h3 class="text-lg lg:text-xl font-medium mb-2">
     <a
       [href]="liveUrl"
@@ -9,8 +11,9 @@
       {{ name }}
     </a>
   </h3>
-  <p class="text-xs lg:text-sm text-muted-foreground mb-2">
-    <strong class="text-foreground">Tech:</strong> {{ stacks }}
+  <p class="flex gap-2 mb-4">
+    Tech:
+    <app-badge *ngFor="let stack of stacks" [name]="stack"></app-badge>
   </p>
   <p class="text-muted-foreground mb-3 text-sm lg:text-base leading-relaxed">
     {{ description }}

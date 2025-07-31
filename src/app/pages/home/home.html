@@ -9,6 +9,9 @@
         <p class="text-muted-foreground text-sm leading-relaxed mb-6">
           {{ profile.description }}
         </p>
+        <div class="my-4 pointer-events-auto">
+          <app-download-file></app-download-file>
+        </div>
         <app-social></app-social>
       </div>
     </header>
@@ -19,22 +22,11 @@
     >
       <div class="flex justify-center space-x-8 py-4 px-6">
         <a
-          (click)="scrollToSection('about2', $event)"
+          *ngFor="let section of ['about2', 'experience2', 'project2']"
+          (click)="scrollToSection(section, $event)"
           class="text-sm font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
         >
-          About
-        </a>
-        <a
-          (click)="scrollToSection('experience2', $event)"
-          class="text-sm font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
-        >
-          Experience
-        </a>
-        <a
-          (click)="scrollToSection('project2', $event)"
-          class="text-sm font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors"
-        >
-          Projects
+          {{ section | titlecase }}
         </a>
       </div>
     </nav>
@@ -71,36 +63,24 @@
       <div class="flex flex-col gap-2 flex-grow pointer-events-none">
         <p class="text-5xl font-bold">{{ profile.name }}</p>
         <p class="text-xl">{{ profile.position }}</p>
-        <p class="text-muted-foreground w-1/2">
+        <p class="text-muted-foreground w-3/4">
           {{ profile.description }}
         </p>
+        <div class="mt-4 pointer-events-auto w-20">
+          <app-download-file></app-download-file>
+        </div>
       </div>
       <span class="space-y-5 my-8 pointer-events-auto w-40">
-        <p>
+        <p *ngFor="let section of ['about', 'experience', 'project']">
           <a
-            (click)="scrollToSection('about', $event)"
+            (click)="scrollToSection(section, $event)"
             class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors py-1"
           >
-            About Me
+            {{ section | titlecase }}
           </a>
         </p>
-        <p>
-          <a
-            (click)="scrollToSection('experience', $event)"
-            class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors py-1"
-          >
-            Work Experience
-          </a>
-        </p>
-        <p>
-          <a
-            (click)="scrollToSection('project', $event)"
-            class="text-lg font-medium text-primary cursor-pointer hover:text-blue-400 transition-colors py-1"
-          >
-            Projects
-          </a>
-        </p>
-      </span>  <div class="pointer-events-auto">
+      </span>
+      <div class="pointer-events-auto">
         <app-social></app-social>
       </div>
     </header>

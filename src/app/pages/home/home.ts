@@ -6,10 +6,11 @@ import { AboutPage } from '../about/about';
 import { Social } from "../social/social";
 import { Experience } from "../experience/experience";
 import { Project } from '../project/project';
+import { DownloadFile } from "../../components/download-file/download-file";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, AboutPage, Social, Experience, Project],
+  imports: [CommonModule, AboutPage, Social, Experience, Project, DownloadFile],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

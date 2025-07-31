@@ -1,10 +1,11 @@
 
+@use '@angular/material' as mat;
+
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
-@use '@angular/material' as mat;
 
 @tailwind base;
 @tailwind components;
@@ -39,6 +40,22 @@ html, body {
 }
 body { 
   margin: 0; 
-  font-family: 'Lato', "Helvetica Neue", sans-serif; 
+  font-family: 'Roboto', "Helvetica Neue", sans-serif; 
   line-height: 1.5; /* Improved readability */
+}
+
+// Custom snackbar styles
+.success-snackbar {
+  background-color: #10b981 !important; // green-500
+  color: white !important;
+}
+
+.error-snackbar {
+  background-color: #ef4444 !important; // red-500
+  color: white !important;
+}
+
+.mat-mdc-snack-bar-container {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }

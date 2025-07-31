@@ -11,7 +11,7 @@ export enum ProjectCategory {
 
 export interface IProject {
   name: string;
-  stacks: string;
+  stacks: string[];
   description: string;
   codeUrl: string;
   liveUrl: string;
