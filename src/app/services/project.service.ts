@@ -18,7 +18,7 @@ export class ProjectService {
       name: 'Admin Panel Platform',
       stacks: ['React', 'NextJS', 'PostgreSQL', 'Tailwind CSS', 'Shadcn UI', 'NestJS'],
       description:
-        'Full-stack e-commerce solution for admin management',
+        'Developed a full-stack e-commerce solution with comprehensive admin management features, including product catalog control, order tracking, user management, and sales reporting',
       codeUrl: '',
       liveUrl: 'https://waterfill.vercel.app',
       category: ProjectCategory.WEB_APP,
