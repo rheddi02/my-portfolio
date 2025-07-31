@@ -1,5 +1,5 @@
 {
-  "name": "my-portfolio",
+  "name": "my-angular-portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,10 +8,10 @@
     "build:ssr": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:my-portfolio": "node dist/my-portfolio/server/server.mjs",
-    "start:prod": "NODE_ENV=production node dist/my-portfolio/server/server.mjs",
-    "docker:build": "docker build -t my-portfolio .",
-    "docker:run": "docker run -p 4000:4000 my-portfolio",
+    "serve:ssr:my-angular-portfolio": "node dist/my-angular-portfolio/server/server.mjs",
+    "start:prod": "NODE_ENV=production node dist/my-angular-portfolio/server/server.mjs",
+    "docker:build": "docker build -t my-angular-portfolio .",
+    "docker:run": "docker run -p 4000:4000 my-angular-portfolio",
     "docker:dev": "docker-compose up --build",
     "docker:prod": "docker-compose -f docker-compose.yml up -d",
     "check-build": "./check-build.sh",

@@ -124,6 +124,11 @@ echo "Stopping existing services..."
 cd /home/ubuntu/my-portfolio 2>/dev/null || true
 docker-compose down 2>/dev/null || true
 
+# Clean up old containers and images to prevent caching issues
+echo "Cleaning up old containers and images..."
+docker container prune -f 2>/dev/null || true
+docker image prune -f 2>/dev/null || true
+
 # Backup current deployment (if exists)
 if [ -d "/home/ubuntu/my-portfolio" ]; then
     echo "Backing up current deployment..."
@@ -140,19 +145,36 @@ rm /tmp/deploy-*.tar.gz
 
 # Start services
 echo "Starting services..."
+docker-compose build --no-cache angular-portfolio
 docker-compose up -d
 
 # Wait for services to start
 echo "Waiting for services to start..."
-sleep 15
+sleep 20
 
 # Check health
 echo "Checking service health..."
 if curl -f http://localhost:4000/health > /dev/null 2>&1; then
     echo "✅ Application is healthy!"
+    
+    # Verify new deployment is serving
+    echo "Verifying deployment version..."
+    NEW_BUNDLE=$(ls dist/my-angular-portfolio/browser/main-*.js 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "unknown")
+    echo "Expected bundle: $NEW_BUNDLE"
+    
+    SERVED_BUNDLE=$(curl -s http://localhost:4000 | grep -o 'main-[A-Z0-9]*\.js' | head -1 2>/dev/null || echo "unknown")
+    echo "Served bundle: $SERVED_BUNDLE"
+    
+    if [ "$NEW_BUNDLE" = "$SERVED_BUNDLE" ]; then
+        echo "✅ New deployment is being served correctly!"
+    else
+        echo "⚠️  Bundle mismatch - forcing container restart..."
+        docker-compose restart angular-portfolio
+        sleep 10
+    fi
 else
     echo "⚠️  Health check failed, checking logs..."
-    docker-compose logs
+    docker-compose logs --tail=20
 fi
 
 echo "✅ Deployment completed on EC2!"

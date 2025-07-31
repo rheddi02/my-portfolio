@@ -1,7 +1,7 @@
 # Production-only Dockerfile (no build stage)
 # Use this when you've already built the application locally
 
-FROM node:18-alpine AS production
+FROM node:20-alpine AS production
 
 # Install curl for health checks
 RUN apk add --no-cache curl
