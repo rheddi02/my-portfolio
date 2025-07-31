@@ -29,7 +29,7 @@ export class ProjectService {
       description:
         'Collection of links to various social media platforms that is categorized for easy access with admin control panel',
       codeUrl: '',
-      liveUrl: 'https://fbcollections.vercel.app/client',
+      liveUrl: 'https://link-collect.vercel.app/client',
       category: ProjectCategory.WEB_APP,
     },
     {
