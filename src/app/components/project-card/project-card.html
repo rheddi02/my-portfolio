@@ -11,7 +11,7 @@
       {{ name }}
     </a>
   </h3>
-  <p class="flex gap-2 mb-4">
+  <p class="flex gap-2 flex-wrap mb-4">
     Tech:
     <app-badge *ngFor="let stack of stacks" [name]="stack"></app-badge>
   </p>
