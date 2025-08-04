@@ -46,7 +46,7 @@ The site includes features such as a downloadable CV, categorized project listin
       LinkCollect is a secure link bookmarking tool for organizing and categorizing external URLs. Users can register, verify their email. Each account includes a dashboard summarizing their saved links, categories, and profile data — optimized for both desktop and mobile.
         `,
       codeUrl: '',
-      liveUrl: 'https://link-collect.vercel.app/client',
+      liveUrl: 'https://link-collect.vercel.app',
       category: ProjectCategory.WEB_APP,
     },
     {
