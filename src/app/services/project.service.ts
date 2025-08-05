@@ -53,7 +53,8 @@ The site includes features such as a downloadable CV, categorized project listin
       name: 'Sales Management System',
       stacks: ['NextJS', 'Shadcn UI', 'PostgreSQL', 'Tailwind CSS'],
       description:
-        'A mobile-first project for managing sales, customers purchases and inventory.',
+        `A mobile-first web application built with Next.js and Tailwind CSS to efficiently manage sales, customers, purchases, and stock inventory. The app includes a real-time sales summary report, secure user authentication, and is fully deployed on Vercel with a PostgreSQL database.
+        Designed for speed, responsiveness, and real-world usability, this project demonstrates fullstack development skills and practical business logic implementation.`,
       codeUrl: '',
       liveUrl: 'https://dreamy.vercel.app/',
       category: ProjectCategory.WEB_APP,
