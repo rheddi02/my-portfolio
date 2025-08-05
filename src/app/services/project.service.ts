@@ -52,8 +52,7 @@ The site includes features such as a downloadable CV, categorized project listin
     {
       name: 'Sales Management System',
       stacks: ['NextJS', 'Shadcn UI', 'PostgreSQL', 'Tailwind CSS'],
-      description:
-        `A mobile-first web application built with Next.js and Tailwind CSS to efficiently manage sales, customers, purchases, and stock inventory. The app includes a real-time sales summary report, secure user authentication, and is fully deployed on Vercel with a PostgreSQL database.
+      description: `A mobile-first web application built with Next.js and Tailwind CSS to efficiently manage sales, customers, purchases, and stock inventory. The app includes a real-time sales summary report, secure user authentication, and is fully deployed on Vercel with a PostgreSQL database.
         Designed for speed, responsiveness, and real-world usability, this project demonstrates fullstack development skills and practical business logic implementation.`,
       codeUrl: '',
       liveUrl: 'https://dreamy.vercel.app/',
@@ -61,9 +60,17 @@ The site includes features such as a downloadable CV, categorized project listin
     },
     {
       name: 'Horse Racing System',
-      stacks: ['Vue.js', 'Tailwind CSS', 'TypeScript', 'PHP', 'Laravel'],
-      description:
-        'Developed a SaaS horse racing platform that allows users to sign up and track live race schedules and results. Subscribers get access to real-time updates for specific horses, with no delay, and receive push notifications even when the app is not focused. The platform is cloud-hosted, scalable, and designed with performance and user engagement in mind.',
+      stacks: [
+        'Vue.js',
+        'Tailwind CSS',
+        'TypeScript',
+        'PHP',
+        'Laravel',
+        'Stripe',
+        'MySQL',
+      ],
+      description: `A cloud-hosted SaaS application designed for horse racing enthusiasts to track live race schedules, results, and get real-time updates on specific horses. The platform offers a subscription model where paid users unlock advanced features like instant updates, push notifications, and horse tracking, even when the app is running in the background.
+      Engineered for performance, scalability, and user engagement, the platform is ideal for both casual fans and serious bettors looking for immediate, reliable race information.`,
       codeUrl: '',
       liveUrl: '',
       category: ProjectCategory.WEB_APP,
