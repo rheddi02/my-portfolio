@@ -16,6 +16,8 @@ export class PortfolioService {
       'NestJS',
       'Angular',
       'GraphQL',
+      'RSC-first depevelopment',
+      'Microservices architecture',
     ]
   };
 
