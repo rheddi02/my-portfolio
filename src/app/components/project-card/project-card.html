@@ -1,21 +1,33 @@
-<div
-  class="project-card p-3 lg:p-5 hover:bg-gray-700 hover:bg-opacity-50 transition-colors rounded-lg border border-gray-800"
->
-  <h3 class="text-lg lg:text-xl font-medium mb-2">
-    <a
-      [href]="liveUrl"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-blue-500 hover:text-blue-700 transition-colors"
-    >
+<div class="project-card p-3 lg:p-5 hover:bg-gray-700 hover:bg-opacity-50 transition-colors rounded-lg border border-gray-800">
+  <!-- Conditionally wrap content in an anchor tag if liveUrl exists -->
+  <a *ngIf="liveUrl; else nonClickable" [href]="liveUrl" target="_blank" rel="noopener noreferrer" class="block">
+    <ng-container *ngTemplateOutlet="projectContent"></ng-container>
+  </a>
+
+  <!-- Fallback for when liveUrl does not exist -->
+  <ng-template #nonClickable>
+    <div class="block">
+      <ng-container *ngTemplateOutlet="projectContent"></ng-container>
+    </div>
+  </ng-template>
+
+  <!-- Reusable project content -->
+  <ng-template #projectContent>
+    <h3 class="text-lg lg:text-xl font-medium mb-2 text-blue-500">
       {{ name }}
-    </a>
-  </h3>
-  <p class="flex gap-2 flex-wrap mb-4">
-    Tech:
-    <app-badge *ngFor="let stack of stacks" [name]="stack"></app-badge>
-  </p>
-  <p class="text-muted-foreground mb-3 text-sm lg:text-base leading-relaxed">
-    {{ description }}
-  </p>
+    </h3>
+    <p class="flex gap-2 flex-wrap mb-4">
+      <span class="text-sm text-muted-foreground">Tech:</span>
+      <app-badge *ngFor="let stack of stacks" [name]="stack"></app-badge>
+    </p>
+    <p class="text-muted-foreground mb-3 text-sm lg:text-base leading-relaxed">
+      {{ description }}
+    </p>
+  </ng-template>
+
+  <!-- Standalone "Code" link, shown if codeUrl exists -->
+  <a *ngIf="codeUrl" [href]="codeUrl" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 transition-colors text-sm lg:text-base mt-4 inline-block">
+    Code
+  </a>
 </div>
+

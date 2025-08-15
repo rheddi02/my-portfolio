@@ -41,11 +41,13 @@ The site includes features such as a downloadable CV, categorized project listin
         'JWT',
         'Tailwind CSS',
         'Nodemailer',
+        'Zustand',
+        'Zod'
       ],
       description: `A fullstack web application that lets users save and categorize external links for easy access, with email verification for security and rich profile customization.
       LinkCollect is a secure link bookmarking tool for organizing and categorizing external URLs. Users can register, verify their email. Each account includes a dashboard summarizing their saved links, categories, and profile data — optimized for both desktop and mobile.
         `,
-      codeUrl: '',
+      codeUrl: 'https://github.com/rheddi02/collections',
       liveUrl: 'https://link-collect.vercel.app',
       category: ProjectCategory.WEB_APP,
     },

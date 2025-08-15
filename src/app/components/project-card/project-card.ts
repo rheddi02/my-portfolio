@@ -1,10 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Badge } from "../badge/badge";
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project-card',
-  imports: [Badge,CommonModule],
+  imports: [Badge, CommonModule],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss'
 })
