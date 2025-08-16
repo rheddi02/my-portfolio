@@ -18,6 +18,7 @@ export class PortfolioService {
       'GraphQL',
       'RSC-first depevelopment',
       'Microservices architecture',
+      'React Native'
     ]
   };
 
