@@ -35,7 +35,8 @@ services:
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro
+      - /etc/letsencrypt/live/itsmealfred.site/fullchain.pem:/etc/nginx/ssl/cert.pem:ro
+      - /etc/letsencrypt/live/itsmealfred.site/privkey.pem:/etc/nginx/ssl/key.pem:ro
     depends_on:
       angular-portfolio:
         condition: service_healthy

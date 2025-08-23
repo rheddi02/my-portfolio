@@ -78,16 +78,8 @@ cp Dockerfile $DEPLOY_DIR/Dockerfile  # Copy as Dockerfile for docker-compose
 cp docker-compose.yml $DEPLOY_DIR/docker-compose.yml  # Copy as docker-compose.yml
 cp nginx.conf $DEPLOY_DIR/
 
-# Copy SSL certificates if they exist
-if [ -d "ssl" ] && [ -f "ssl/fullchain.pem" ] && [ -f "ssl/prevkey.pem" ]; then
-    print_status "Copying SSL certificates..."
-    mkdir -p $DEPLOY_DIR/ssl
-    cp ssl/fullchain.pem $DEPLOY_DIR/ssl/cert.pem
-    cp ssl/prevkey.pem $DEPLOY_DIR/ssl/key.pem
-else
-    print_warning "SSL certificates not found - creating empty ssl directory"
-    mkdir -p $DEPLOY_DIR/ssl
-fi
+# Note: SSL certificates are no longer packaged or stored in the repo.
+# Nginx now reads certificates directly from /etc/letsencrypt on the host via bind mounts.
 
 # Create deployment archive
 print_status "Creating deployment archive..."

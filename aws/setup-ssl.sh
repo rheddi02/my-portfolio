@@ -56,19 +56,10 @@ $SUDO certbot certonly --standalone \
     --email $EMAIL \
     --domains $DOMAIN,$WWW_DOMAIN
 
-# Create ssl directory if it doesn't exist
-print_status "Creating SSL directory..."
-mkdir -p ssl/
-
-# Copy certificates to ssl directory
-print_status "Copying certificates..."
-$SUDO cp /etc/letsencrypt/live/$DOMAIN/fullchain.pem ssl/cert.pem
-$SUDO cp /etc/letsencrypt/live/$DOMAIN/privkey.pem ssl/key.pem
-
-# Set proper permissions
-$SUDO chown $USER:$USER ssl/cert.pem ssl/key.pem
-chmod 644 ssl/cert.pem
-chmod 600 ssl/key.pem
+# Set proper permissions on Let's Encrypt private key
+print_status "Setting strict permissions on private key..."
+$SUDO chown root:root /etc/letsencrypt/live/$DOMAIN/privkey.pem
+$SUDO chmod 600 /etc/letsencrypt/live/$DOMAIN/privkey.pem
 
 print_status "✅ SSL certificates installed successfully!"
 
