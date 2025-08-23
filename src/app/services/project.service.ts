@@ -10,7 +10,7 @@ export class ProjectService {
       stacks: ['Angular', 'Tailwind CSS', 'TypeScript'],
       description: `A responsive, single-page portfolio website built with Angular 18 and Tailwind CSS, designed to professionally showcase my work experience, technical skills, and development projects — including this portfolio itself.
 The site includes features such as a downloadable CV, categorized project listings, a detailed work history section, a skills overview (with both current technologies and future learning goals like Kubernetes), and social media links for easy networking. With a focus on UI/UX best practices, the design is optimized for mobile and desktop, using Tailwind’s utility-first styling and Angular’s component architecture to ensure performance, accessibility, and clarity.`,
-      codeUrl: '',
+      codeUrl: 'https://github.com/rheddi02/my-portfolio',
       liveUrl: 'https://itsmealfred.site',
       category: ProjectCategory.WEB_APP,
     },
@@ -56,7 +56,7 @@ The site includes features such as a downloadable CV, categorized project listin
       stacks: ['NextJS', 'Shadcn UI', 'PostgreSQL', 'Tailwind CSS'],
       description: `A mobile-first web application built with Next.js and Tailwind CSS to efficiently manage sales, customers, purchases, and stock inventory. The app includes a real-time sales summary report, secure user authentication, and is fully deployed on Vercel with a PostgreSQL database.
         Designed for speed, responsiveness, and real-world usability, this project demonstrates fullstack development skills and practical business logic implementation.`,
-      codeUrl: '',
+      codeUrl: 'https://github.com/rheddi02/dreamy-bag',
       liveUrl: 'https://dreamy.vercel.app/',
       category: ProjectCategory.WEB_APP,
     },
